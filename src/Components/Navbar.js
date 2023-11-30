@@ -66,9 +66,19 @@ const Navbar = () => {
         <Box sx={{ width: 250}}
         role="presentation"
         onClick={()=>setOpenMenu(false)}
-        onkeyDown={()=>setOpenMenu(false)}
-        >
-
+        onkeyDown={()=>setOpenMenu(false)}>
+          <list>
+            {menuOptions.map((item) =>(
+              <ListItem key={item.text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText primary={item.text} />
+                </ListItemButton>
+              </ListItem>
+            ) )}
+          </list>
         </Box>
       </Drawer>
     </nav>
